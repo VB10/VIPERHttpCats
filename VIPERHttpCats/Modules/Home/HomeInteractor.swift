@@ -8,7 +8,7 @@
 
 import Foundation
 
-//https://www.youtube.com/watch?v=7wrhpBXtDJ8
+//https://www.youtube.com/watch?v=7wrhpBXtDJ8 @yusuf
 
 protocol HomeUseCase {
     func getTitle() -> String

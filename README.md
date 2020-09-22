@@ -10,3 +10,4 @@ Viper architecture prepare for swift
 
 - https://www.youtube.com/watch?v=7wrhpBXtDJ8
 - https://medium.com/flawless-app-stories/implementing-viper-archticture-pattern-for-ios-d24a6def8ba2
+- https://github.com/strongself/Generamba

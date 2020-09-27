@@ -8,17 +8,32 @@
 
 import Foundation
 
-//https://www.youtube.com/watch?v=7wrhpBXtDJ8 @yusuf
-
-protocol HomeUseCase {
-    func getTitle() -> String
+protocol HomeInteractorOutputs {
+    func onSuccessSearch(res: CatRepositoresResponse)
+    func onErrorSearch(error: BaseError)
 }
+class HomeInteractor: Interactorable {
 
-class HomeInteractor { }
+    var presenter: HomeInteractorOutputs?
+    var networkManager: INetworkService
+
+    init(networkManager: INetworkService) {
+        self.networkManager = networkManager
+    }
 
 
-extension HomeInteractor: HomeUseCase {
-    func getTitle() -> String {
-        return "VB"
+    func fetchCats() {
+        networkManager.get(path: .firebase, nil, onSuccess: { (response: BaseResponse<[Cat]>) in
+            guard let data = response.model else {
+//                self.presenter?.onErrorSearch(error: )
+                return
+            }
+
+            self.presenter?.onSuccessSearch(res: CatRepositoresResponse(items: data))
+        }) { (error) in
+        
+            self.presenter?.onErrorSearch(error: error)
+        }
+
     }
 }

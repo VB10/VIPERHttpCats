@@ -19,3 +19,9 @@ struct Cat: Codable {
         case statusCode
     }
 }
+
+
+struct CatRepositoresResponse: Codable {
+    let items: [Cat]
+}
+

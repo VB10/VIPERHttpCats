@@ -9,34 +9,68 @@
 import Foundation
 
 
-protocol HomePresentation {
-    func viewDidLoad()
-    func navigateLogin()
-}
+typealias HomePresenterDependencies = (
+    interactor: HomeInteractor,
+    router: HomeRouterOutput
+)
 
 class HomePresenter {
 
-    weak var view: HomeView?
-    var interactor: HomeUseCase
-    var router: HomeRouting
+    var view: HomeViewInputs?
+    internal var entites: HomeEntities
+    let dependencies: HomePresenterDependencies
 
-    init(view: HomeView, interactor: HomeUseCase, router: HomeRouting) {
-        self.interactor = interactor
-        self.router = router
+
+    init(view: HomeViewInputs,
+        entites: HomeEntities,
+        dependencies: HomePresenterDependencies) {
         self.view = view
+        self.entites = entites
+        self.dependencies = dependencies
+    }
+}
+
+extension HomePresenter: HomeViewOutputs {
+    func viewDidLoad() {
+        view?.configure(entities: HomeEntities(entryEntity: HomeEntryEntity(language: "vb")))
+        entites.catApiState = .loading
+        dependencies.interactor.fetchCats()
+
+    }
+
+    func onCloseButtonTapped() {
+        dependencies.router.dismiss(animated: true)
+    }
+
+    func onReachBottom() {
+        guard entites.catApiState != .loading else {
+            return
+        }
+        entites.catApiState = .loading
+        dependencies.interactor.fetchCats()
+        view?.indicatorView(animate: true)
     }
 
 }
 
+extension HomePresenter: HomeTableViewDataSourceOutputs {
+    func didSelect(_ cat: Cat) {
+        dependencies.router.transitionDetail(httpCat: cat)
+    }
+}
 
-extension HomePresenter: HomePresentation {
-    func navigateLogin() {
-        router.navigateLogin()
+extension HomePresenter: HomeInteractorOutputs {
+    
+    func onSuccessSearch(res: CatRepositoresResponse) {
+        entites.catApiState = .complete
+        entites.catRepositories = res.items
+        view?.reloadTableView(tableViewDataSource: HomeTableViewDataSoruce(entities: entites, presenter: self))
+        view?.indicatorView(animate: false)
     }
 
-    func viewDidLoad() {
-        print(self.interactor.getTitle())
-
-        view?.updateTitle(title: self.interactor.getTitle())
+    func onErrorSearch(error: BaseError) {
+        view?.indicatorView(animate: false)
     }
+
+
 }

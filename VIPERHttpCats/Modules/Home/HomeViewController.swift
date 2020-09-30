@@ -11,6 +11,7 @@ import UIKit
 protocol HomeViewInputs {
     func configure(entities: HomeEntities)
     func reloadTableView(tableViewDataSource: HomeTableViewDataSoruce)
+    func setupTableViewCell()
     func indicatorView(animate: Bool)
 }
 
@@ -50,6 +51,11 @@ extension HomeViewController: Viewable { }
 
 
 extension HomeViewController: HomeViewInputs {
+    func setupTableViewCell() {
+        let nib = UINib(nibName: "CatTableViewCell", bundle: nil)
+        self.homeTableViewController.register(nib, forCellReuseIdentifier: "CatTableViewCell")
+    }
+
     func configure(entities: HomeEntities) {
         self.titleLabel.text = entities.entryEntity.language
 
@@ -68,6 +74,7 @@ extension HomeViewController: HomeViewInputs {
             self.homeTableViewController.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: animate ? 50 : 0, right: 0)
 
             _ = animate ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = !animate
 
         }
     }

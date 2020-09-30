@@ -39,9 +39,7 @@ class NetworkManager: INetworkService {
                 onError(BaseError(response.error))
                 return
             }
-
             onSuccess(BaseResponse.init(model: model, message: ""))
-
         }
     }
 

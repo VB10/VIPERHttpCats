@@ -34,8 +34,9 @@ extension HomePresenter: HomeViewOutputs {
     func viewDidLoad() {
         view?.configure(entities: HomeEntities(entryEntity: HomeEntryEntity(language: "vb")))
         entites.catApiState = .loading
+        view?.indicatorView(animate: true)
         dependencies.interactor.fetchCats()
-
+        view?.setupTableViewCell()
     }
 
     func onCloseButtonTapped() {

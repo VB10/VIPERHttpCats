@@ -28,13 +28,20 @@ class HomeTableViewDataSoruce: TableViewItemDataSource {
     }
 
     func itemCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cat = entities.catRepositories[indexPath.row]
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "subtitle")
-        cell.textLabel?.text = cat.catDescription
-        cell.detailTextLabel?.text = "\(cat.statusCode)"
 
-        return cell
+
+        guard let catCell = tableView.dequeueReusableCell(withIdentifier: "CatTableViewCell") as? CatTableViewCell else { return UITableViewCell() }
+
+        catCell.setupCell(catModel: entities.catRepositories[indexPath.row])
+
+//        let cat = entities.catRepositories[indexPath.row]
+//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "subtitle")
+//        cell.textLabel?.text = cat.catDescription
+//        cell.detailTextLabel?.text = "\(cat.statusCode)"
+
+        return catCell
     }
+
 
     func didSelect(tableView: UITableView, indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

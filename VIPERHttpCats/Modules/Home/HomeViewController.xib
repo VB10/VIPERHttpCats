@@ -42,7 +42,8 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-WW-D36">
-                    <rect key="frame" x="197" y="862" width="20" height="20"/>
+                    <rect key="frame" x="10" y="54" width="20" height="20"/>
+                    <color key="color" red="1" green="0.073312054239999994" blue="0.026774895350000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -50,12 +51,12 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sMC-Q8-Btp" secondAttribute="trailing" constant="48.5" id="7nb-FF-Z1k"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yvl-lE-fhm" secondAttribute="bottom" id="ApX-qA-r5s"/>
                 <constraint firstItem="sMC-Q8-Btp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Bby-y5-GBZ"/>
-                <constraint firstItem="PHZ-WW-D36" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="20" id="ObP-kN-IsN"/>
+                <constraint firstItem="PHZ-WW-D36" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="N09-GW-cFH"/>
                 <constraint firstItem="yvl-lE-fhm" firstAttribute="top" secondItem="sMC-Q8-Btp" secondAttribute="bottom" constant="10" id="R5E-ZH-sHB"/>
+                <constraint firstItem="PHZ-WW-D36" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="SJM-eS-ZSi"/>
                 <constraint firstItem="sMC-Q8-Btp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="167" id="aDp-EK-Po1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yvl-lE-fhm" secondAttribute="trailing" id="b7n-A0-H47"/>
                 <constraint firstItem="yvl-lE-fhm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dMb-nn-CyI"/>
-                <constraint firstItem="PHZ-WW-D36" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="naE-7g-ITp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="153"/>

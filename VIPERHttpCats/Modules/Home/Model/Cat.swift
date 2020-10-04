@@ -2,7 +2,7 @@
 //  Cat.swift
 //  VIPERHttpCats
 //
-//  Created by Veli on 20.09.2020.
+//  Created by Veli on 30.09.2020.
 //  Copyright © 2020 Veli. All rights reserved.
 //
 
@@ -24,4 +24,3 @@ struct Cat: Codable {
 struct CatRepositoresResponse: Codable {
     let items: [Cat]
 }
-

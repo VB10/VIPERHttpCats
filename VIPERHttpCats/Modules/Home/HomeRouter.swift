@@ -9,18 +9,16 @@
 import UIKit
 
 
-protocol HomeRouting {
-    func navigateLogin()
-}
-
-
 
 final class HomeRouter {
+
+    let navigationController: UINavigationController
 
     var viewController: HomeViewController
 
     init(view: HomeViewController) {
         self.viewController = view
+        navigationController = UINavigationController(rootViewController: view)
     }
 
 }
@@ -49,6 +47,8 @@ struct HomeRouterInput {
     }
 
 
+
+
 }
 
 final class HomeRouterOutput: Routerable {
@@ -58,8 +58,10 @@ final class HomeRouterOutput: Routerable {
         self.view = view
     }
 
-    func transitionDetail(httpCat: Cat) {
-//
-        print(httpCat.catDescription)
+    func navigateToDetail(httpCat: Cat) {
+        let detailEntitites = DetailEntites(entryEntity: DetailEntity(title: "Detail", heroKey: "hero"))
+        detailEntitites.catItem = httpCat
+
+        DetailRouterInput().push(from: view, entryEntity: detailEntitites)
     }
 }

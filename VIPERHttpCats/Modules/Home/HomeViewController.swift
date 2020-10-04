@@ -57,6 +57,7 @@ extension HomeViewController: HomeViewInputs {
     }
 
     func configure(entities: HomeEntities) {
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.titleLabel.text = entities.entryEntity.language
 
     }
@@ -92,9 +93,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("a")
         tableViewDataSource?.didSelect(tableView: tableView, indexPath: indexPath)
     }
 
+//    didselec
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let visibleLastIndexPath = homeTableViewController.visibleCells.compactMap { [weak self] in
             self?.homeTableViewController.indexPath(for: $0)

@@ -13,6 +13,14 @@ protocol HomeTableViewDataSourceOutputs: AnyObject {
     func didSelect(_ cat: Cat)
 }
 
+protocol TableViewItemDataSource: AnyObject {
+    var numberOfItems: Int { get }
+
+    func itemCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
+    func didSelect(tableView: UITableView, indexPath: IndexPath)
+}
+
+
 class HomeTableViewDataSoruce: TableViewItemDataSource {
 
     private var entities: HomeEntities!
@@ -31,14 +39,7 @@ class HomeTableViewDataSoruce: TableViewItemDataSource {
 
 
         guard let catCell = tableView.dequeueReusableCell(withIdentifier: "CatTableViewCell") as? CatTableViewCell else { return UITableViewCell() }
-
         catCell.setupCell(catModel: entities.catRepositories[indexPath.row])
-
-//        let cat = entities.catRepositories[indexPath.row]
-//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "subtitle")
-//        cell.textLabel?.text = cat.catDescription
-//        cell.detailTextLabel?.text = "\(cat.statusCode)"
-
         return catCell
     }
 

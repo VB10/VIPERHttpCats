@@ -12,6 +12,7 @@ protocol HomeInteractorOutputs {
     func onSuccessSearch(res: CatRepositoresResponse)
     func onErrorSearch(error: BaseError)
 }
+
 class HomeInteractor: Interactorable {
 
     var presenter: HomeInteractorOutputs?
@@ -25,7 +26,6 @@ class HomeInteractor: Interactorable {
     func fetchCats() {
         networkManager.get(path: .firebase, nil, onSuccess: { (response: BaseResponse<[Cat]>) in
             guard let data = response.model else {
-//                self.presenter?.onErrorSearch(error: )
                 return
             }
 

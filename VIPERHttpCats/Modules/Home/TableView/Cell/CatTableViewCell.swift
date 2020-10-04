@@ -27,10 +27,9 @@ class CatTableViewCell: UITableViewCell {
         catStatusLabel.text = cat.catDescription
         catStatusCodeLabel.text = String(cat.statusCode)
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
 }

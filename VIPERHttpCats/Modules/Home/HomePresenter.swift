@@ -56,7 +56,7 @@ extension HomePresenter: HomeViewOutputs {
 
 extension HomePresenter: HomeTableViewDataSourceOutputs {
     func didSelect(_ cat: Cat) {
-        dependencies.router.transitionDetail(httpCat: cat)
+        dependencies.router.navigateToDetail(httpCat: cat)
     }
 }
 

@@ -30,6 +30,7 @@
 		5490BE812524D13600DD2E6C /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5490BE7F2524D13600DD2E6C /* DetailViewController.xib */; };
 		5490BE832524D19000DD2E6C /* DetailEntitties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5490BE822524D19000DD2E6C /* DetailEntitties.swift */; };
 		5490BE852524D1F300DD2E6C /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5490BE842524D1F300DD2E6C /* Cat.swift */; };
+		54A18C6C252DB30900882608 /* HomeContractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A18C6B252DB30900882608 /* HomeContractor.swift */; };
 		54A1D8A72517A37600E57620 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A1D8A62517A37600E57620 /* AppDelegate.swift */; };
 		54A1D8A92517A37600E57620 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A1D8A82517A37600E57620 /* SceneDelegate.swift */; };
 		54A1D8AB2517A37600E57620 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A1D8AA2517A37600E57620 /* ViewController.swift */; };
@@ -68,6 +69,7 @@
 		5490BE7F2524D13600DD2E6C /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		5490BE822524D19000DD2E6C /* DetailEntitties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntitties.swift; sourceTree = "<group>"; };
 		5490BE842524D1F300DD2E6C /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
+		54A18C6B252DB30900882608 /* HomeContractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContractor.swift; sourceTree = "<group>"; };
 		54A1D8A32517A37600E57620 /* VIPERHttpCats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERHttpCats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A1D8A62517A37600E57620 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		54A1D8A82517A37600E57620 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				540B616E2519A57400C466F0 /* HomeViewController.swift */,
 				540B616F2519A57400C466F0 /* HomeViewController.xib */,
 				5478F210251B68A2001DB307 /* HomeEntities.swift */,
+				54A18C6B252DB30900882608 /* HomeContractor.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				5490BE832524D19000DD2E6C /* DetailEntitties.swift in Sources */,
 				54A1D8A92517A37600E57620 /* SceneDelegate.swift in Sources */,
 				54C6E798252032ED00DCC41C /* BaseError.swift in Sources */,
+				54A18C6C252DB30900882608 /* HomeContractor.swift in Sources */,
 				54C6E79B2520331200DCC41C /* INetworkManager.swift in Sources */,
 				54C6E78B25201F8400DCC41C /* HomeTableViewDataSource.swift in Sources */,
 				5478F211251B68A2001DB307 /* HomeEntities.swift in Sources */,

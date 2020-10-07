@@ -32,6 +32,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmk-A1-h5N">
                             <rect key="frame" x="173.5" y="0.0" width="25" height="41"/>
                             <connections>
+                                <action selector="filterButtonPressed:" destination="-1" eventType="touchUpInside" id="5LI-LI-LeW"/>
                                 <action selector="navigateCats:" destination="-1" eventType="touchUpInside" id="hFc-Ki-tCP"/>
                             </connections>
                         </button>

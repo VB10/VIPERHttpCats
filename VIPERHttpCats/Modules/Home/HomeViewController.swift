@@ -8,18 +8,7 @@
 
 import UIKit
 
-protocol HomeViewInputs {
-    func configure(entities: HomeEntities)
-    func reloadTableView(tableViewDataSource: HomeTableViewDataSoruce)
-    func setupTableViewCell()
-    func indicatorView(animate: Bool)
-}
 
-protocol HomeViewOutputs {
-    func viewDidLoad()
-    func onCloseButtonTapped()
-    func onReachBottom()
-}
 
 class HomeViewController: UIViewController {
 
@@ -42,29 +31,31 @@ class HomeViewController: UIViewController {
     @IBAction func navigateCats(_ sender: Any) {
 //        presenter?.navigateLogin()
     }
+    @IBAction func filterButtonPressed(_ sender: Any) {
+        sortByTitle()
+    }
 
 }
-
-
 
 extension HomeViewController: Viewable { }
 
 
 extension HomeViewController: HomeViewInputs {
+    func sortByTitle() {
+        tableViewDataSource?.sortItems(tableView: homeTableViewController)
+    }
+
     func setupTableViewCell() {
         let nib = UINib(nibName: "CatTableViewCell", bundle: nil)
         self.homeTableViewController.register(nib, forCellReuseIdentifier: "CatTableViewCell")
     }
 
     func configure(entities: HomeEntities) {
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.titleLabel.text = entities.entryEntity.language
-
     }
 
     func reloadTableView(tableViewDataSource: HomeTableViewDataSoruce) {
         self.tableViewDataSource = tableViewDataSource
-
         DispatchQueue.main.async {
             self.homeTableViewController.reloadData()
         }
@@ -73,13 +64,11 @@ extension HomeViewController: HomeViewInputs {
     func indicatorView(animate: Bool) {
         DispatchQueue.main.async {
             self.homeTableViewController.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: animate ? 50 : 0, right: 0)
-
             _ = animate ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
             self.activityIndicator.isHidden = !animate
 
         }
     }
-
 
 }
 
@@ -93,11 +82,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("a")
         tableViewDataSource?.didSelect(tableView: tableView, indexPath: indexPath)
     }
 
-//    didselec
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let visibleLastIndexPath = homeTableViewController.visibleCells.compactMap { [weak self] in
             self?.homeTableViewController.indexPath(for: $0)
@@ -105,6 +92,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let last = visibleLastIndexPath, last.row > (tableViewDataSource?.numberOfItems ?? 0) - 2 else { return }
         presenter?.onReachBottom()
     }
-
-
 }

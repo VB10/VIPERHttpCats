@@ -20,46 +20,41 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Uu2-jO-NAt">
-                    <rect key="frame" x="20" y="94" width="374" height="241"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sJe-wS-U6X">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="77"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="hero"/>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tne-dY-Far">
-                            <rect key="frame" x="0.0" y="82" width="42" height="77"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssB-ys-iuX">
-                            <rect key="frame" x="0.0" y="164" width="42" height="77"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="sJe-wS-U6X" firstAttribute="top" secondItem="Uu2-jO-NAt" secondAttribute="top" id="6I7-bg-P6k"/>
-                        <constraint firstAttribute="trailing" secondItem="sJe-wS-U6X" secondAttribute="trailing" id="VBA-Mx-TXY"/>
-                        <constraint firstItem="sJe-wS-U6X" firstAttribute="leading" secondItem="Uu2-jO-NAt" secondAttribute="leading" id="qu6-38-fAE"/>
-                    </constraints>
-                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sJe-wS-U6X">
+                    <rect key="frame" x="0.0" y="44" width="414" height="358.5"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="hero"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tne-dY-Far" userLabel="Title">
+                    <rect key="frame" x="20" y="438" width="128" height="30"/>
+                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssB-ys-iuX" userLabel="Description">
+                    <rect key="frame" x="20" y="515.5" width="120" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="Uu2-jO-NAt" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.268973" id="8VC-jr-i7k"/>
-                <constraint firstItem="Uu2-jO-NAt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DfO-GF-LhX"/>
-                <constraint firstItem="Uu2-jO-NAt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="h1C-YF-M2H"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Uu2-jO-NAt" secondAttribute="trailing" constant="20" id="jwt-fn-HHF"/>
+                <constraint firstItem="ssB-ys-iuX" firstAttribute="top" secondItem="Tne-dY-Far" secondAttribute="bottom" constant="47.5" id="1Pz-dP-5KI"/>
+                <constraint firstItem="Tne-dY-Far" firstAttribute="top" secondItem="sJe-wS-U6X" secondAttribute="bottom" constant="35.5" id="2PT-mZ-9eb"/>
+                <constraint firstItem="sJe-wS-U6X" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="DHn-bl-L71"/>
+                <constraint firstItem="sJe-wS-U6X" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ITB-K4-mK3"/>
+                <constraint firstItem="sJe-wS-U6X" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JNX-Sq-wlr"/>
+                <constraint firstItem="ssB-ys-iuX" firstAttribute="leading" secondItem="Tne-dY-Far" secondAttribute="leading" id="QJz-iQ-qbL"/>
+                <constraint firstItem="sJe-wS-U6X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rVv-2a-KSK"/>
+                <constraint firstItem="Tne-dY-Far" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tGa-nL-Aou"/>
+                <constraint firstItem="sJe-wS-U6X" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="zpO-uN-fGA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
 </document>

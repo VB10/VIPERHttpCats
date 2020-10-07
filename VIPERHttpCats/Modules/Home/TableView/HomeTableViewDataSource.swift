@@ -18,6 +18,7 @@ protocol TableViewItemDataSource: AnyObject {
 
     func itemCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
     func didSelect(tableView: UITableView, indexPath: IndexPath)
+    func sortItems(tableView: UITableView)
 }
 
 
@@ -50,5 +51,9 @@ class HomeTableViewDataSoruce: TableViewItemDataSource {
         presenter?.didSelect(selectedCat)
     }
 
+    func sortItems(tableView: UITableView) {
+        entities.catRepositories.sort(by: { $0.statusCode > $1.statusCode })
+        tableView.reloadData()
+    }
 
 }

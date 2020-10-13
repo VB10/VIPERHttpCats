@@ -106,15 +106,11 @@
 		540B61672519A31900C466F0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				54C6E7A22520374800DCC41C /* Model */,
-				54C6E78925201F6E00DCC41C /* TableView */,
-				540B61682519A37B00C466F0 /* HomeInteractor.swift */,
-				540B616A2519A49200C466F0 /* HomeRouter.swift */,
-				540B616C2519A50D00C466F0 /* HomePresenter.swift */,
-				540B616E2519A57400C466F0 /* HomeViewController.swift */,
-				540B616F2519A57400C466F0 /* HomeViewController.xib */,
-				5478F210251B68A2001DB307 /* HomeEntities.swift */,
-				54A18C6B252DB30900882608 /* HomeContractor.swift */,
+				548CAFF62530213A00E948FD /* View */,
+				548CAFF9253022C800E948FD /* Interactor */,
+				548CAFF82530214900E948FD /* Presenter */,
+				54C6E7A22520374800DCC41C /* Entitiy */,
+				548CAFF72530214400E948FD /* Router */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -151,6 +147,40 @@
 				54A1D8AA2517A37600E57620 /* ViewController.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		548CAFF62530213A00E948FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				540B616E2519A57400C466F0 /* HomeViewController.swift */,
+				540B616F2519A57400C466F0 /* HomeViewController.xib */,
+				54C6E78925201F6E00DCC41C /* TableView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		548CAFF72530214400E948FD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				540B616A2519A49200C466F0 /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		548CAFF82530214900E948FD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				540B616C2519A50D00C466F0 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		548CAFF9253022C800E948FD /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				540B61682519A37B00C466F0 /* HomeInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		5490BE672524822B00DD2E6C /* Cell */ = {
@@ -275,12 +305,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		54C6E7A22520374800DCC41C /* Model */ = {
+		54C6E7A22520374800DCC41C /* Entitiy */ = {
 			isa = PBXGroup;
 			children = (
+				54A18C6B252DB30900882608 /* HomeContractor.swift */,
+				5478F210251B68A2001DB307 /* HomeEntities.swift */,
 				5490BE842524D1F300DD2E6C /* Cat.swift */,
 			);
-			path = Model;
+			path = Entitiy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

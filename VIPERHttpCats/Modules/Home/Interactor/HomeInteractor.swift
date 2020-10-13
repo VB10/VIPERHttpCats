@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol HomeInteractorOutputs {
-    func onSuccessSearch(res: CatRepositoresResponse)
-    func onErrorSearch(error: BaseError)
-}
 
 class HomeInteractor: Interactorable {
 
@@ -22,16 +18,13 @@ class HomeInteractor: Interactorable {
         self.networkManager = networkManager
     }
 
-
     func fetchCats() {
         networkManager.get(path: .firebase, nil, onSuccess: { (response: BaseResponse<[Cat]>) in
             guard let data = response.model else {
                 return
             }
-
             self.presenter?.onSuccessSearch(res: CatRepositoresResponse(items: data))
         }) { (error) in
-        
             self.presenter?.onErrorSearch(error: error)
         }
 

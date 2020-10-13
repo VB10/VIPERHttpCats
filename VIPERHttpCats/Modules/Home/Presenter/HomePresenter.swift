@@ -61,7 +61,7 @@ extension HomePresenter: HomeTableViewDataSourceOutputs {
 }
 
 extension HomePresenter: HomeInteractorOutputs {
-    
+
     func onSuccessSearch(res: CatRepositoresResponse) {
         entites.catApiState = .complete
         entites.catRepositories = res.items
@@ -72,6 +72,4 @@ extension HomePresenter: HomeInteractorOutputs {
     func onErrorSearch(error: BaseError) {
         view?.indicatorView(animate: false)
     }
-
-
 }

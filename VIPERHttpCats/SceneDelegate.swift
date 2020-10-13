@@ -21,8 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let initialViewController = HomeRouterInput().open(from: HomeViewController(), entryEntity: HomeEntryEntity(language: "vb"))
         let navigationController = UINavigationController()
         navigationController.viewControllers = [initialViewController]
-
-
+        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 

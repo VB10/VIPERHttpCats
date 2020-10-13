@@ -12,8 +12,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    var presenter: HomePresenter?
-    internal var tableViewDataSource: TableViewItemDataSource?
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var homeTableViewController: UITableView! {
         didSet {
@@ -21,16 +19,17 @@ class HomeViewController: UIViewController {
             homeTableViewController.dataSource = self
         }
     }
+
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+    var presenter: HomePresenter?
+    internal var tableViewDataSource: TableViewItemDataSource?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        presenter?.viewDidLoad()
         presenter?.viewDidLoad()
     }
-    @IBAction func navigateCats(_ sender: Any) {
-//        presenter?.navigateLogin()
-    }
+
     @IBAction func filterButtonPressed(_ sender: Any) {
         sortByTitle()
     }
@@ -51,7 +50,8 @@ extension HomeViewController: HomeViewInputs {
     }
 
     func configure(entities: HomeEntities) {
-        self.titleLabel.text = entities.entryEntity.language
+        self.navigationItem.title = entities.entryEntity.language
+        self.titleLabel.text = ""
     }
 
     func reloadTableView(tableViewDataSource: HomeTableViewDataSoruce) {

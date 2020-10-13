@@ -24,7 +24,6 @@ final class HomeRouter {
 }
 
 struct HomeRouterInput {
-
     private func view(entryEntity: HomeEntryEntity) -> HomeViewController {
         let view = HomeViewController()
         let interactor = HomeInteractor(networkManager: NetworkManager(config: NetworkConfig(baseUrl: ApplicatonConstants.BASE_URL)))
@@ -45,10 +44,6 @@ struct HomeRouterInput {
     func open(from: Viewable, entryEntity: HomeEntryEntity) -> HomeViewController {
         return self.view(entryEntity: entryEntity)
     }
-
-
-
-
 }
 
 final class HomeRouterOutput: Routerable {
@@ -61,7 +56,6 @@ final class HomeRouterOutput: Routerable {
     func navigateToDetail(httpCat: Cat) {
         let detailEntitites = DetailEntites(entryEntity: DetailEntity(title: "Detail", heroKey: "hero"))
         detailEntitites.catItem = httpCat
-
         DetailRouterInput().push(from: view, entryEntity: detailEntitites)
     }
 }

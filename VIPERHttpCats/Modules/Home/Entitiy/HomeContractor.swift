@@ -8,6 +8,11 @@
 
 import Foundation
 
+protocol HomeInteractorOutputs {
+    func onSuccessSearch(res: CatRepositoresResponse)
+    func onErrorSearch(error: BaseError)
+}
+
 protocol HomeViewInputs {
     func configure(entities: HomeEntities)
     func reloadTableView(tableViewDataSource: HomeTableViewDataSoruce)
